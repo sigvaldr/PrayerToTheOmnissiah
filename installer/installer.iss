@@ -31,9 +31,9 @@ DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=F:\Dev\PraiseTheOmnissiah\installer
+OutputDir=F:\Dev\PrayerToTheOmnissiah\installer
 OutputBaseFilename=PRAYER-SETUP
-SetupIconFile=F:\Dev\PraiseTheOmnissiah\src\icon.ico
+SetupIconFile=F:\Dev\PrayerToTheOmnissiah\src\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -45,8 +45,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "F:\Dev\PraiseTheOmnissiah\src\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "F:\Dev\PraiseTheOmnissiah\src\assets\*"; DestDir: "{app}\assets"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "F:\Dev\PrayerToTheOmnissiah\src\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "F:\Dev\PrayerToTheOmnissiah\src\assets\*"; DestDir: "{app}\assets"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
