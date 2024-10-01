@@ -2,14 +2,21 @@ import os
 import time
 import threading
 import random
-from playsound import playsound
+from pygame import mixer
 
 # Utils
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def audio(s):
-    threading.Thread(target=playsound, args=(s,), daemon=True).start()
+    mixer.init()
+    mixer.music.load(s)
+    mixer.music.play()
+
+def print_slow(txt):
+    for x in txt:                     # cycle through the text one character at a time
+        print(x, end='', flush=True)  # print one character, no new line, flush buffer
+        time.sleep(0.05)              # Time between each letter
 
 #Colors
 class Colors:
@@ -131,34 +138,38 @@ if __name__ == '__main__':
     time.sleep(5)
 
     cls()
-    print("+--------------------------------------------------------------------------------------------------+")
+    print("+------------------------------------------------------------------------------------------------------------+")
     print()
-    print(Quote())
-    print("+--------------------------------------------------------------------------------------------------+")
+    print_slow(" " + Quote())
+    print()
+    print("+------------------------------------------------------------------------------------------------------------+")
     time.sleep(10)
 
     cls()
-    print("+--------------------------------------------------------------------------------------------------+")
+    print("+------------------------------------------------------------------------------------------------------------+")
     print()
-    print(Quote())
-    print("+--------------------------------------------------------------------------------------------------+")
+    print_slow(" " + Quote())
+    print()
+    print("+------------------------------------------------------------------------------------------------------------+")
     time.sleep(10)
 
     cls()
     print(Colors.AMBER +
         "+--------------------------------------------------------------------------------------------------+")
     print()
-    print("Stand-by for the Awakening of the Machine Spirit")
+    print_slow("Stand-by for the Awakening of the Machine Spirit")
+    print()
     print()
     print("+--------------------------------------------------------------------------------------------------+")
     audio('assets/prayer.mp3')
-    time.sleep(107)
+    time.sleep(105)
 
     cls()
     print(Colors.RED +
         "+--------------------------------------------------------------------------------------------------+")
     print()
-    print("Begin Litany of Engine Invocation")
+    print_slow("Begin Litany of Engine Invocation")
+    print()
     print()
     print("+--------------------------------------------------------------------------------------------------+")
     time.sleep(7)
@@ -167,7 +178,8 @@ if __name__ == '__main__':
     print(Colors.LIGHT_GREEN +
         "+--------------------------------------------------------------------------------------------------+")
     print()
-    print("Thus we invoke the Master of All Knowledge.")
+    print_slow("Thus we invoke the Master of All Knowledge.")
+    print()
     print()
     print("+--------------------------------------------------------------------------------------------------+")
     time.sleep(3)
@@ -178,7 +190,8 @@ if __name__ == '__main__':
     print(Colors.LIGHT_GREEN +
         "+--------------------------------------------------------------------------------------------------+")
     print()
-    print("Shed Your powers upon this machine.")
+    print_slow("Shed Your powers upon this machine.")
+    print()
     print()
     print("+--------------------------------------------------------------------------------------------------+")
     time.sleep(3)
@@ -189,7 +202,8 @@ if __name__ == '__main__':
     print(Colors.LIGHT_GREEN +
     "+--------------------------------------------------------------------------------------------------+")
     print()
-    print("Invest this device with Your holy charge.")
+    print_slow("Invest this device with Your holy charge.")
+    print()
     print()
     print("+--------------------------------------------------------------------------------------------------+")
     time.sleep(3)
@@ -199,12 +213,15 @@ if __name__ == '__main__':
     cls()
     print("+--------------------------------------------------------------------------------------------------+")
     print()
-    print("Blessed is the mind too small for doubt.")
-    print("Blessed is the ignorance that wise men choose for themselves.")
-    print("Blessings of the Omnissiah have been bestowed upon you. The Omnissiah directs our footsteps along the path of knowledge.")
+    print_slow("Blessed is the mind too small for doubt.")
+    print()
+    print_slow("Blessed is the ignorance that wise men choose for themselves.")
+    print()
+    print_slow("Blessings of the Omnissiah have been bestowed upon you. The Omnissiah directs our footsteps along the path of knowledge.")
+    print()
     print()
     print("+--------------------------------------------------------------------------------------------------+")
-    time.sleep(10)
+    time.sleep(25)
     cls()
     print(Colors.AMBER +
         '''
